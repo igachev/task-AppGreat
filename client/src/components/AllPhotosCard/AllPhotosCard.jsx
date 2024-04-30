@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 
 export default function AllPhotosCard({
+    id,
     title,
     description,
     photo
 }) {
+
 
     return (
         <div className="all-photos-card">
@@ -12,6 +16,7 @@ export default function AllPhotosCard({
             <div className="img-container">
                 <img src={photo} alt="" />
             </div>
+            <Link to={`/photos/${id}/details`}>Photo Details</Link>
         </div>
     )
 }

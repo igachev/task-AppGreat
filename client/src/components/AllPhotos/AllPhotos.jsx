@@ -31,7 +31,7 @@ useEffect(() => {
         <div>
             {photos.length > 0 ? 
             photos.map((photo) => (
-               <AllPhotosCard key={photo._id} title={photo.title} description={photo.description} photo={photo.photo} />
+               <AllPhotosCard key={photo._id} id={photo._id} title={photo.title} description={photo.description} photo={photo.photo} />
             ))
         : null}
         </div>
