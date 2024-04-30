@@ -36,4 +36,16 @@ router.get('/:photoId', async(req,res) => {
 
 })
 
+router.put('/:photoId', async(req,res) => {
+    const photoId = req.params.photoId
+    const {title,description,photo} = req.body;
+
+    try {
+        const result = await photoService.editPhoto(photoId,title,description,photo)
+        res.status(200).json(result)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 module.exports = router
