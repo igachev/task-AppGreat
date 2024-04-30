@@ -21,3 +21,12 @@ exports.getPhotos = async () => {
         throw err
     }
 }
+
+exports.getPhoto = async (photoId) => {
+    try {
+        const photo = await Photo.findById(photoId)
+        return photo
+    } catch (err) {
+        throw err
+    }
+}
