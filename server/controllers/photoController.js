@@ -13,4 +13,15 @@ router.post('/', async (req,res) => {
     }
 })
 
+router.get('/', async (req,res) => {
+
+    try {
+        const result = await photoService.getPhotos()
+        res.status(200).json(result)
+    } catch (err) {
+        console.log(err)
+    }
+
+})
+
 module.exports = router
