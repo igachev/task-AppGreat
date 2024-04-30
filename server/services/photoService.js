@@ -30,3 +30,25 @@ exports.getPhoto = async (photoId) => {
         throw err
     }
 }
+
+exports.editPhoto = async (photoId,title,description,photo) => {
+    try {
+        const editedPhoto = await Photo.findOneAndUpdate(
+            {_id: photoId},
+
+            {
+                $set: {
+                    title,
+                    description,
+                    photo
+                }
+            },
+
+            {runValidators: true, new: true}
+        )
+        
+        return editedPhoto
+    } catch (err) {
+        console.log(err)
+    }
+}
