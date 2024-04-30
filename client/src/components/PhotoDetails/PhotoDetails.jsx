@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 export default function PhotoDetails() {
 
@@ -50,6 +50,7 @@ useEffect(() => {
             </div>
             <button onClick={goToPreviousPage}>Back</button>
             <button onClick={deletePhoto}>Delete</button>
+            <Link to={`/photos/${id}/edit`}>Edit</Link>
         </div>
     )
 }
