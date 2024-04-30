@@ -8,6 +8,7 @@ export default function AllPhotosCard({
     photo
 }) {
 
+    
 
     return (
         <div className="all-photos-card">

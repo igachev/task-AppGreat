@@ -27,6 +27,15 @@ function goToPreviousPage() {
     navigate(-1)
 }
 
+async function deletePhoto(e) {
+    e.preventDefault()
+    let isConfirmed = confirm('Are you sure you want to delete this photo?')
+    if(isConfirmed) {
+        fetch(`http://localhost:5000/photos/${id}`, {method: 'DELETE'})
+        .then(() => navigate('/'))
+    }
+}
+
 useEffect(() => {
     getPhoto()
     .then((data) => setPhoto(data))
@@ -40,6 +49,7 @@ useEffect(() => {
                 <img src={photo.photo} alt="" style={ {width: '400px'} } />
             </div>
             <button onClick={goToPreviousPage}>Back</button>
+            <button onClick={deletePhoto}>Delete</button>
         </div>
     )
 }
