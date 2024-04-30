@@ -12,3 +12,12 @@ exports.addPhoto = async (title,description,photo) => {
     }
 
 }
+
+exports.getPhotos = async () => {
+    try {
+        const photos = await Photo.find({})
+        return photos
+    } catch (err) {
+        throw err
+    }
+}

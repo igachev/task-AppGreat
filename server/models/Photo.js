@@ -11,7 +11,7 @@ const photoSchema = new mongoose.Schema({
         type: String
     },
 
-    image: {
+    photo: {
         type: String
     }
 
