@@ -48,4 +48,15 @@ router.put('/:photoId', async(req,res) => {
     }
 })
 
+router.delete('/:photoId', async(req,res) => {
+    const photoId = req.params.photoId
+
+    try {
+        const result = await photoService.deletePhoto(photoId)
+        res.status(200).json(result)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 module.exports = router
