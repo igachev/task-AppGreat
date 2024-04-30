@@ -46,9 +46,19 @@ exports.editPhoto = async (photoId,title,description,photo) => {
 
             {runValidators: true, new: true}
         )
-        
+
         return editedPhoto
     } catch (err) {
-        console.log(err)
+        throw err
+    }
+}
+
+exports.deletePhoto = async (photoId) => {
+
+    try {
+        const deletedPhoto = await Photo.findByIdAndDelete(photoId)
+        return deletedPhoto
+    } catch (err) {
+        throw err
     }
 }
