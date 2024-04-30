@@ -24,4 +24,16 @@ router.get('/', async (req,res) => {
 
 })
 
+router.get('/:photoId', async(req,res) => {
+    const photoId = req.params.photoId
+
+    try {
+        const result = await photoService.getPhoto(photoId)
+        res.status(200).json(result)
+    } catch (err) {
+        console.log(err)
+    }
+
+})
+
 module.exports = router
